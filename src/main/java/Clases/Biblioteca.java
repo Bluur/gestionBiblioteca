@@ -37,6 +37,14 @@ public class Biblioteca {
     }
     
     public ArrayList<Libro> autoresAndaluces(){
+        ArrayList <Libro> autoresAndaluces = new ArrayList<>();
         
+        for(Libro temporal:listaLibros){
+            if(temporal.getAutor().getEsAndaluz() == true){
+                autoresAndaluces.add(temporal);
+            }
+        }
+        
+        return autoresAndaluces;
     }
 }
