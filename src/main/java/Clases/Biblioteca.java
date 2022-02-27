@@ -35,4 +35,8 @@ public class Biblioteca {
         
         return eliminado;
     }
+    
+    public ArrayList<Libro> autoresAndaluces(){
+        
+    }
 }

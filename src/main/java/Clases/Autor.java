@@ -104,12 +104,6 @@ public class Autor {
             return false;
         }
         final Autor other = (Autor) obj;
-        if (this.birthYear != other.birthYear) {
-            return false;
-        }
-        if (this.esAndaluz != other.esAndaluz) {
-            return false;
-        }
         if (!Objects.equals(this.nombre, other.nombre)) {
             return false;
         }
