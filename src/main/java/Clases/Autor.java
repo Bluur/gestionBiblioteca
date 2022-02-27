@@ -83,6 +83,11 @@ public class Autor {
     }
 
     @Override
+    public String toString() {
+        return "Autor{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", birthYear=" + birthYear + ", esAndaluz=" + esAndaluz + '}';
+    }
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 23 * hash + Objects.hashCode(this.nombre);

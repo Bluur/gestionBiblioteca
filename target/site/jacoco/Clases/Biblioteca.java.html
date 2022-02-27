@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Biblioteca.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GestionBiblioteca</a> &gt; <a href="index.source.html" class="el_package">Clases</a> &gt; <span class="el_source">Biblioteca.java</span></div><h1>Biblioteca.java</h1><pre class="source lang-java linenums">
+package Clases;
+
+import java.util.ArrayList;
+
+public class Biblioteca {
+    
+    ArrayList &lt;Libro&gt; listaLibros;
+    
+<span class="fc" id="L10">    public Biblioteca(){</span>
+<span class="fc" id="L11">        listaLibros = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L12">    }</span>
+    
+    public boolean addLibro(Libro libro){
+<span class="fc" id="L15">        boolean colocar = true;</span>
+        
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        for(Libro presente:listaLibros){</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">            if(libro.getTitulo().equals(presente.getTitulo())){</span>
+<span class="fc" id="L19">                colocar = false;</span>
+            }
+<span class="fc" id="L21">        }</span>
+        
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if(colocar){</span>
+<span class="fc" id="L24">            listaLibros.add(libro);</span>
+        }
+        
+<span class="fc" id="L27">        return colocar;</span>
+    }
+    
+    public boolean delLibro(Libro libro){
+<span class="fc" id="L31">        int index = 0;</span>
+<span class="fc" id="L32">        boolean eliminado = false;</span>
+        
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for(Libro presente:listaLibros){</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if(presente.equals(libro)){</span>
+<span class="fc" id="L36">                index = listaLibros.indexOf(presente);</span>
+<span class="fc" id="L37">                eliminado = true;</span>
+            }
+<span class="fc" id="L39">        }</span>
+        
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if(eliminado){</span>
+<span class="fc" id="L42">            listaLibros.remove(index);</span>
+        }
+        
+<span class="fc" id="L45">        return eliminado;</span>
+    }
+    
+    public ArrayList&lt;Libro&gt; autoresAndaluces(){
+<span class="fc" id="L49">        ArrayList &lt;Libro&gt; autoresAndaluces = new ArrayList&lt;&gt;();</span>
+        
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        for(Libro temporal:listaLibros){</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            if(temporal.getAutor().getEsAndaluz() == true){</span>
+<span class="fc" id="L53">                autoresAndaluces.add(temporal);</span>
+            }
+<span class="fc" id="L55">        }</span>
+        
+<span class="fc" id="L57">        return autoresAndaluces;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

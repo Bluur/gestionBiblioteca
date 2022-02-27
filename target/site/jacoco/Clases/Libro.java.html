@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Libro.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GestionBiblioteca</a> &gt; <a href="index.source.html" class="el_package">Clases</a> &gt; <span class="el_source">Libro.java</span></div><h1>Libro.java</h1><pre class="source lang-java linenums">
+package Clases;
+
+public class Libro {
+    //Atributos
+    private String titulo;
+    private Autor autor;
+    private int publishingYear;
+    private String tipo;
+    
+    //Constructor
+<span class="fc" id="L12">    public Libro(String titulo, Autor autor, int publishingYear, String tipo){</span>
+<span class="pc bpc" id="L13" title="1 of 4 branches missed.">        if(titulo.length() &lt; 3 || titulo.length() &gt; 50){</span>
+<span class="fc" id="L14">            throw new IllegalArgumentException(&quot;El titulo no cumple la longitud&quot;);</span>
+        }
+        
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if(publishingYear &lt; 1800){</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(&quot;El año debe ser mayor que 1800&quot;);</span>
+        }
+        
+<span class="fc bfc" id="L21" title="All 4 branches covered.">        if((!tipo.equals(&quot;prosa&quot;) &amp;&amp; !tipo.equals(&quot;verso&quot;))){</span>
+<span class="fc" id="L22">            throw new IllegalArgumentException(&quot;El tipo no puede ser diferente de prosa/verso&quot;);</span>
+        }
+        
+<span class="fc" id="L25">        this.titulo = titulo;</span>
+<span class="fc" id="L26">        this.autor = new Autor(autor.getNombre(), autor.getApellidos(), autor.getBirthYear(), autor.getEsAndaluz());</span>
+<span class="fc" id="L27">        this.publishingYear = publishingYear;</span>
+<span class="fc" id="L28">        this.tipo = tipo;</span>
+<span class="fc" id="L29">    }</span>
+    
+<span class="nc" id="L31">    public Libro(Libro copiar){</span>
+<span class="nc" id="L32">        this.autor = new Autor(copiar.getAutor());</span>
+<span class="nc" id="L33">        this.titulo = copiar.getTitulo();</span>
+<span class="nc" id="L34">        this.publishingYear = copiar.getPublishingYear();</span>
+<span class="nc" id="L35">    }</span>
+    
+    //Métodos
+    public String getTitulo() {
+<span class="fc" id="L39">        return titulo;</span>
+    }
+
+    public void setTitulo(String titulo) {
+        
+<span class="pc bpc" id="L44" title="3 of 4 branches missed.">        if(titulo.length() &lt; 3 || titulo.length() &gt; 50){</span>
+<span class="fc" id="L45">            throw new IllegalArgumentException(&quot;El titulo no cumple la longitud&quot;);</span>
+        }
+        
+<span class="nc" id="L48">        this.titulo = titulo;</span>
+<span class="nc" id="L49">    }</span>
+
+    public Autor getAutor() {
+<span class="fc" id="L52">        return autor;</span>
+    }
+
+    public void setAutor(Autor autor) {
+<span class="nc" id="L56">        this.autor = new Autor(autor.getNombre(), autor.getApellidos(), autor.getBirthYear(), autor.getEsAndaluz());</span>
+<span class="nc" id="L57">    }</span>
+
+    public int getPublishingYear() {
+<span class="fc" id="L60">        return publishingYear;</span>
+    }
+
+    public void setPublishingYear(int publishingYear) {
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if(publishingYear &lt; 1800){</span>
+<span class="fc" id="L65">            throw new IllegalArgumentException(&quot;El año debe ser mayor que 1800&quot;);</span>
+        }
+        
+<span class="nc" id="L68">        this.publishingYear = publishingYear;</span>
+<span class="nc" id="L69">    }</span>
+
+    public String getTipo() {
+<span class="fc" id="L72">        return tipo;</span>
+    }
+
+    public void setTipo(String tipo) {
+        
+<span class="pc bpc" id="L77" title="2 of 4 branches missed.">        if((!tipo.equals(&quot;prosa&quot;) &amp;&amp; !tipo.equals(&quot;verso&quot;))){</span>
+<span class="fc" id="L78">            throw new IllegalArgumentException(&quot;El tipo no puede ser diferente de prosa/verso&quot;);</span>
+        }
+        
+<span class="nc" id="L81">        this.tipo = tipo;</span>
+        
+<span class="nc" id="L83">    }</span>
+    
+    public boolean equals(Libro otro){
+<span class="pc bpc" id="L86" title="1 of 4 branches missed.">        return (this.titulo.equals(otro.getTitulo())) &amp;&amp; (this.autor.equals(otro.autor));</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L91">        return &quot;Libro{&quot; + &quot;titulo=&quot; + titulo + &quot;, autor=&quot; + autor + &quot;, publishingYear=&quot; + publishingYear + &quot;, tipo=&quot; + tipo + '}';</span>
+    }
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

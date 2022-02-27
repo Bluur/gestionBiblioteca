@@ -18,7 +18,7 @@ public class Libro {
             throw new IllegalArgumentException("El año debe ser mayor que 1800");
         }
         
-        if(!tipo.equals("prosa") && !tipo.equals("verso")){
+        if((!tipo.equals("prosa") && !tipo.equals("verso"))){
             throw new IllegalArgumentException("El tipo no puede ser diferente de prosa/verso");
         }
         
@@ -74,12 +74,21 @@ public class Libro {
 
     public void setTipo(String tipo) {
         
-        if(!tipo.equals("prosa") || !tipo.equals("verso")){
+        if((!tipo.equals("prosa") && !tipo.equals("verso"))){
             throw new IllegalArgumentException("El tipo no puede ser diferente de prosa/verso");
         }
         
         this.tipo = tipo;
         
+    }
+    
+    public boolean equals(Libro otro){
+        return (this.titulo.equals(otro.getTitulo())) && (this.autor.equals(otro.autor));
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", publishingYear=" + publishingYear + ", tipo=" + tipo + '}';
     }
     
     

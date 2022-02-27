@@ -5,7 +5,11 @@ import java.util.ArrayList;
 
 public class Biblioteca {
     
-    private ArrayList <Libro> listaLibros;
+    ArrayList <Libro> listaLibros;
+    
+    public Biblioteca(){
+        listaLibros = new ArrayList<>();
+    }
     
     public boolean addLibro(Libro libro){
         boolean colocar = true;
@@ -24,13 +28,18 @@ public class Biblioteca {
     }
     
     public boolean delLibro(Libro libro){
+        int index = 0;
         boolean eliminado = false;
         
         for(Libro presente:listaLibros){
-            if(libro.getTitulo().equals(presente.getTitulo())){
-                listaLibros.remove(presente);
+            if(presente.equals(libro)){
+                index = listaLibros.indexOf(presente);
                 eliminado = true;
             }
+        }
+        
+        if(eliminado){
+            listaLibros.remove(index);
         }
         
         return eliminado;

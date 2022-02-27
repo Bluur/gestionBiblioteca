@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Autor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GestionBiblioteca</a> &gt; <a href="index.source.html" class="el_package">Clases</a> &gt; <span class="el_source">Autor.java</span></div><h1>Autor.java</h1><pre class="source lang-java linenums">
+package Clases;
+
+import java.util.Objects;
+
+public class Autor {
+    //Atributos
+    private String nombre;
+    private String apellidos;
+    private int birthYear;
+    private boolean esAndaluz;
+    
+    //Constructor
+<span class="fc" id="L14">    public Autor(String nombre, String apellidos, int birthYear, boolean esAndaluz){</span>
+        
+<span class="pc bpc" id="L16" title="1 of 4 branches missed.">        if(nombre.length() &lt; 4 || nombre.length() &gt; 30){</span>
+<span class="fc" id="L17">            throw new IllegalArgumentException(&quot;El nombre no es válido&quot;);</span>
+        }
+        
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if(apellidos.isEmpty()){</span>
+<span class="nc" id="L21">            throw new IllegalArgumentException(&quot;Los apellidos no pueden estar vacios&quot;);</span>
+        }
+        
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if(birthYear &lt; 1800){</span>
+<span class="fc" id="L25">            throw new IllegalArgumentException(&quot;El año no puede ser menor que 1800&quot;);</span>
+        }
+        
+<span class="fc" id="L28">        this.nombre = nombre;</span>
+<span class="fc" id="L29">        this.apellidos = apellidos;</span>
+<span class="fc" id="L30">        this.birthYear = birthYear;</span>
+<span class="fc" id="L31">        this.esAndaluz = esAndaluz;</span>
+<span class="fc" id="L32">    }</span>
+    
+    public Autor(Autor autor){
+<span class="nc" id="L35">        this(autor.getNombre(), autor.getApellidos(), autor.getBirthYear(), autor.getEsAndaluz());</span>
+<span class="nc" id="L36">    }</span>
+    
+    //Métodos
+    public String getNombre() {
+<span class="fc" id="L40">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="pc bpc" id="L44" title="3 of 4 branches missed.">        if(!(nombre.length() &gt;= 4) || !(nombre.length() &lt;= 30)){</span>
+<span class="fc" id="L45">            throw new IllegalArgumentException(&quot;El nombre no es válido&quot;);</span>
+        }
+<span class="nc" id="L47">        this.nombre = nombre;</span>
+<span class="nc" id="L48">    }</span>
+
+    public String getApellidos() {
+<span class="fc" id="L51">        return apellidos;</span>
+    }
+
+    public void setApellidos(String apellidos) {
+        
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if(apellidos.isEmpty()){</span>
+<span class="fc" id="L57">            throw new IllegalArgumentException(&quot;Los apellidos no pueden estar vacios&quot;);</span>
+        }
+        
+<span class="nc" id="L60">        this.apellidos = apellidos;</span>
+        
+<span class="nc" id="L62">    }</span>
+
+    public int getBirthYear() {
+<span class="fc" id="L65">        return birthYear;</span>
+    }
+
+    public void setBirthYear(int birthYear) {
+        
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">        if(birthYear &lt; 1800){</span>
+<span class="fc" id="L71">            throw new IllegalArgumentException(&quot;El año no puede ser menor que 1800&quot;);</span>
+        }
+        
+<span class="nc" id="L74">        this.birthYear = birthYear;</span>
+<span class="nc" id="L75">    }</span>
+
+    public boolean getEsAndaluz() {
+<span class="fc" id="L78">        return esAndaluz;</span>
+    }
+
+    public void setEsAndaluz(boolean esAndaluz) {
+<span class="nc" id="L82">        this.esAndaluz = esAndaluz;</span>
+<span class="nc" id="L83">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L87">        return &quot;Autor{&quot; + &quot;nombre=&quot; + nombre + &quot;, apellidos=&quot; + apellidos + &quot;, birthYear=&quot; + birthYear + &quot;, esAndaluz=&quot; + esAndaluz + '}';</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L92">        int hash = 7;</span>
+<span class="nc" id="L93">        hash = 23 * hash + Objects.hashCode(this.nombre);</span>
+<span class="nc" id="L94">        hash = 23 * hash + Objects.hashCode(this.apellidos);</span>
+<span class="nc" id="L95">        hash = 23 * hash + this.birthYear;</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">        hash = 23 * hash + (this.esAndaluz ? 1 : 0);</span>
+<span class="nc" id="L97">        return hash;</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        if (this == obj) {</span>
+<span class="fc" id="L103">            return true;</span>
+        }
+<span class="pc bpc" id="L105" title="1 of 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L106">            return false;</span>
+        }
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L109">            return false;</span>
+        }
+<span class="fc" id="L111">        final Autor other = (Autor) obj;</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">        if (!Objects.equals(this.nombre, other.nombre)) {</span>
+<span class="fc" id="L113">            return false;</span>
+        }
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">        if (!Objects.equals(this.apellidos, other.apellidos)) {</span>
+<span class="nc" id="L116">            return false;</span>
+        }
+<span class="fc" id="L118">        return true;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

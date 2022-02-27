@@ -44,7 +44,20 @@ public class LibroTest {
         this.prueba = null;
         this.federico = null;
     }
-
+    
+    @ParameterizedTest
+    @CsvSource({
+        "ro, 1900, prosa, El titulo no cumple la longitud",
+        "Romancero, 1799, prosa, El año debe ser mayor que 1800",
+        "Romancero, 1800, rap, El tipo no puede ser diferente de prosa/verso"
+    })
+    public void testConstructor(String titulo, int publishingYear, String tipo, String expRes){
+        Exception excepcion = assertThrows(IllegalArgumentException.class, ()->{
+            Libro prueba = new Libro(titulo, this.federico, publishingYear, tipo);
+        });
+        
+        assertEquals(expRes, excepcion.getMessage());
+    }
     @ParameterizedTest
     @CsvSource({
         "Romancero Gitano",
@@ -85,7 +98,7 @@ public class LibroTest {
 
         }else{
             Libro pez = new Libro("Si yo fuera un pez", this.ayes, 2021, "verso");
-                    assertFalse(pez.getAutor().equals(this.federico));
+            assertFalse(pez.getAutor().equals(this.federico));
 
         }
     }
@@ -131,17 +144,25 @@ public class LibroTest {
 
     @ParameterizedTest
     @CsvSource({
-        "Romancero Gitano, 1928, prosa, 1928",
-        "Romancero Gitano, 1928, prosa, 1928",
+        "Romancero Gitano, 1928, prosa, prosa",
+        "Romancero Gitano, 1928, verso, verso",
 
     })
-    public void testGetTipo(String titulo, int year, String tipo) {
+    public void testGetTipo(String titulo, int year, String tipo, String expRes) {
         Libro prueba1 = new Libro(titulo, this.federico, year, tipo);
+        assertEquals(expRes, prueba1.getTipo());
     }
 
-    @Test
-    public void testSetTipo() {
-
+    @ParameterizedTest
+    @CsvSource({
+        "rap, El tipo no puede ser diferente de prosa/verso",
+        "hipHop, El tipo no puede ser diferente de prosa/verso"
+    })
+    public void testSetTipo(String tipo, String expRes) {
+        Exception excepcion = assertThrows(IllegalArgumentException.class, ()->{
+           this.prueba.setTipo(tipo);
+        });
+        assertEquals(expRes, excepcion.getMessage());
     }
     
 }
