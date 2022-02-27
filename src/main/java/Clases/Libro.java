@@ -18,7 +18,7 @@ public class Libro {
             throw new IllegalArgumentException("El año debe ser mayor que 1800");
         }
         
-        if(!tipo.equals("prosa") || !tipo.equals("verso")){
+        if(!tipo.equals("prosa") && !tipo.equals("verso")){
             throw new IllegalArgumentException("El tipo no puede ser diferente de prosa/verso");
         }
         
@@ -41,12 +41,11 @@ public class Libro {
 
     public void setTitulo(String titulo) {
         
-        if(titulo.length() >= 3 && titulo.length() <= 50){
-            this.titulo = titulo;
-        }else{
-            System.err.println("La longitud del titulo no es válida, inténtelo de nuevo");
-        }      
+        if(titulo.length() < 3 || titulo.length() > 50){
+            throw new IllegalArgumentException("El titulo no cumple la longitud");
+        }
         
+        this.titulo = titulo;
     }
 
     public Autor getAutor() {
@@ -62,6 +61,10 @@ public class Libro {
     }
 
     public void setPublishingYear(int publishingYear) {
+        if(publishingYear < 1800){
+            throw new IllegalArgumentException("El año debe ser mayor que 1800");
+        }
+        
         this.publishingYear = publishingYear;
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Clases.AutorTest" time="0.177" tests="17" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Clases.LibroTest" time="0.185" tests="17" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,8 +15,9 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\Migue\AppData\Local\Temp\surefire1184263301423958973\surefirebooter14851907559895179900.jar C:\Users\Migue\AppData\Local\Temp\surefire1184263301423958973 2022-02-24T18-30-08_784-jvmRun1 surefire13935301249974931969tmp surefire_015348986574065979323tmp"/>
+    <property name="sun.java.command" value="C:\Users\Migue\AppData\Local\Temp\surefire16106031482839011908\surefirebooter14061218396756018432.jar C:\Users\Migue\AppData\Local\Temp\surefire16106031482839011908 2022-02-24T19-18-04_137-jvmRun1 surefire16893945442797962490tmp surefire_015230371552110364173tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="Clases.LibroTest"/>
     <property name="surefire.test.class.path" value="C:\Users\Migue\Documents\NetBeansProjects\GestionBiblioteca\target\test-classes;C:\Users\Migue\Documents\NetBeansProjects\GestionBiblioteca\target\classes;C:\Users\Migue\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Migue\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Migue\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Migue\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Migue\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Migue\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Migue\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Migue"/>
@@ -30,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Migue\AppData\Local\Temp\surefire1184263301423958973\surefirebooter14851907559895179900.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Migue\AppData\Local\Temp\surefire16106031482839011908\surefirebooter14061218396756018432.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
@@ -57,21 +58,21 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testGetEsAndaluz{String, String, int, boolean, boolean}[1]" classname="Clases.AutorTest" time="0.042"/>
-  <testcase name="testGetEsAndaluz{String, String, int, boolean, boolean}[2]" classname="Clases.AutorTest" time="0.002"/>
-  <testcase name="testGetEsAndaluz{String, String, int, boolean, boolean}[3]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testSetApellidos{String, String, int, boolean, String}[1]" classname="Clases.AutorTest" time="0.003"/>
-  <testcase name="testSetApellidos{String, String, int, boolean, String}[2]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testGetBirthYear{String, String, int, boolean, int}[1]" classname="Clases.AutorTest" time="0.002"/>
-  <testcase name="testGetBirthYear{String, String, int, boolean, int}[2]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testSetNombre{String, String, int, boolean, String}[1]" classname="Clases.AutorTest" time="0.002"/>
-  <testcase name="testSetNombre{String, String, int, boolean, String}[2]" classname="Clases.AutorTest" time="0"/>
-  <testcase name="testGetNombre{String, String, int, boolean, String}[1]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testGetNombre{String, String, int, boolean, String}[2]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testSetBirthYear{String, String, int, boolean, int, String}[1]" classname="Clases.AutorTest" time="0.003"/>
-  <testcase name="testSetBirthYear{String, String, int, boolean, int, String}[2]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testConstructor{String, String, int, boolean, String}[1]" classname="Clases.AutorTest" time="0.003"/>
-  <testcase name="testConstructor{String, String, int, boolean, String}[2]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testGetApellidos{String, String, int, boolean, String}[1]" classname="Clases.AutorTest" time="0.001"/>
-  <testcase name="testGetApellidos{String, String, int, boolean, String}[2]" classname="Clases.AutorTest" time="0.001"/>
+  <testcase name="testGetAutor{String}[1]" classname="Clases.LibroTest" time="0.041"/>
+  <testcase name="testGetAutor{String}[2]" classname="Clases.LibroTest" time="0.002"/>
+  <testcase name="testGetTipo{String, int, String}[1]" classname="Clases.LibroTest" time="0.002"/>
+  <testcase name="testGetTipo{String, int, String}[2]" classname="Clases.LibroTest" time="0.002"/>
+  <testcase name="testSetPublishingYear{int, String}[1]" classname="Clases.LibroTest" time="0.006"/>
+  <testcase name="testSetPublishingYear{int, String}[2]" classname="Clases.LibroTest" time="0.001"/>
+  <testcase name="testSetPublishingYear{int, String}[3]" classname="Clases.LibroTest" time="0"/>
+  <testcase name="testSetTitulo{String, String}[1]" classname="Clases.LibroTest" time="0.002"/>
+  <testcase name="testSetTitulo{String, String}[2]" classname="Clases.LibroTest" time="0"/>
+  <testcase name="testGetTitulo{String}[1]" classname="Clases.LibroTest" time="0.006"/>
+  <testcase name="testGetTitulo{String}[2]" classname="Clases.LibroTest" time="0.001"/>
+  <testcase name="testGetTitulo{String}[3]" classname="Clases.LibroTest" time="0.001"/>
+  <testcase name="testSetTipo" classname="Clases.LibroTest" time="0.002"/>
+  <testcase name="testGetPublishingYear{String, int, String, int}[1]" classname="Clases.LibroTest" time="0"/>
+  <testcase name="testGetPublishingYear{String, int, String, int}[2]" classname="Clases.LibroTest" time="0.001"/>
+  <testcase name="testSetAutor{String, String, int, boolean, String}[1]" classname="Clases.LibroTest" time="0.003"/>
+  <testcase name="testSetAutor{String, String, int, boolean, String}[2]" classname="Clases.LibroTest" time="0.001"/>
 </testsuite>

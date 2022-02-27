@@ -1,6 +1,8 @@
 
 package Clases;
 
+import java.util.Objects;
+
 public class Autor {
     //Atributos
     private String nombre;
@@ -79,5 +81,42 @@ public class Autor {
     public void setEsAndaluz(boolean esAndaluz) {
         this.esAndaluz = esAndaluz;
     }
-  
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.nombre);
+        hash = 23 * hash + Objects.hashCode(this.apellidos);
+        hash = 23 * hash + this.birthYear;
+        hash = 23 * hash + (this.esAndaluz ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Autor other = (Autor) obj;
+        if (this.birthYear != other.birthYear) {
+            return false;
+        }
+        if (this.esAndaluz != other.esAndaluz) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.apellidos, other.apellidos)) {
+            return false;
+        }
+        return true;
+    }
+
 }

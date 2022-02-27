@@ -38,14 +38,7 @@ public class BibliotecaTest {
      */
     @Test
     public void testAddLibro() {
-        System.out.println("addLibro");
-        Libro libro = null;
-        Biblioteca instance = new Biblioteca();
-        boolean expResult = false;
-        boolean result = instance.addLibro(libro);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -53,14 +46,7 @@ public class BibliotecaTest {
      */
     @Test
     public void testDelLibro() {
-        System.out.println("delLibro");
-        Libro libro = null;
-        Biblioteca instance = new Biblioteca();
-        boolean expResult = false;
-        boolean result = instance.delLibro(libro);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
     
 }
